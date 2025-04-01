@@ -9,6 +9,7 @@ import adminRoutes from "./routes/admin.routes";
 import { corsHandler } from "./middleware/corsHandler";
 import { loggingHandler } from "./middleware/loggingHandler";
 import { routeNotFound } from "./middleware/routeNotFound";
+import  OrderChangeRoutes  from "./routes/order_change.routes"; // Cambia esto a la ruta correcta para OrderChange
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api/products", productsRoutes);
 app.use("/api/company", companyRoutes);
 app.use("/api/orders", pedidosRoutes);
 app.use("/api/admins", adminRoutes);
+app.use("/api/order-changes", OrderChangeRoutes); // Cambia esto a la ruta correcta para OrderChange
 
 app.use(routeNotFound);//Middleware para informar de una ruta inexistente fuera de /users , /products ,etc.
 
